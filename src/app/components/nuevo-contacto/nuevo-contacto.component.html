@@ -1,0 +1,34 @@
+<div class="global">
+    <div class="container">
+        <div class="design">
+            <div class="fil4"></div>
+        </div>
+        <div class="login">
+            <div class="fil1 rotate"></div>
+            <div class="fil2 rotate"></div>
+            <form #form="ngForm" (ngSubmit)="agregarContacto()">
+            <h3 class="title">{{contacto.id?"Editar contacto":"Nuevo contacto"}}<span class="point">.</span></h3>
+            <div class="textinput">
+                <input type="text" placeholder="Ingrese nombre"  name="nombre" id="user" [(ngModel)]="contacto.name">
+            </div>
+            <div class="textinput">
+                <input type="text" placeholder="Ingrese apellido" name="apellidos" [(ngModel)]="contacto.lastName">
+            </div>
+            <div class="textinput">
+                <input type="email" placeholder="Ingrese email" name="email" [(ngModel)]="contacto.email">
+            </div>
+            <div class="textinput">
+                <input type="text" placeholder="Ingrese numero de telefono" name="telefono" [(ngModel)]="contacto.number">
+            </div>
+            <div class="textinput">
+                <input type="text" placeholder="Ingrese su empresa" name="empresa" [(ngModel)]="contacto.company">
+            </div>
+            <div class="textinput">
+                <input type="text" placeholder="foto" name="foto" [(ngModel)]="contacto.image">
+            </div>
+            <button  type="submit"  class="logbtn">{{contacto.id?"Editar":"Crear"}}</button>
+            <button type="button"  class="logbtn" (click)="cerrar.emit()" >Cancelar</button>
+    </form>
+    </div>
+</div>
+

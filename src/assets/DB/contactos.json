@@ -1,0 +1,62 @@
+[
+    {
+        "id":"1",
+        "img": "../../../assets/people1.jpg",
+        "nombre": "Juan",
+        "apellidos": "García",
+        "direccion": "Calle 1",
+        "telefono": "123456789",
+        "email": "Jgarcia@gmail.com",
+        "empresa": "Google"
+    },
+    {
+        "id":"2",
+        "img": "../../../assets/people2.jpg",
+        "nombre": "María",
+        "apellidos": "González",
+        "direccion": "Calle 2",
+        "telefono": "123456789",
+        "email": "Mgonzalez@gmail.com",
+        "empresa": "Apple"
+    },
+    {
+        "id":"3",
+        "img": "",
+        "nombre": "Pedro",
+        "apellidos": "Gómez",
+        "direccion": "Calle 3",
+        "telefono": "123456789",
+        "email": "Pgomez@gmail.com",
+        "empresa": "Apple"
+    },
+    {
+        "id":"4",
+        "img": "",
+        "nombre": "Alejandro",
+        "apellidos": "Martinez",
+        "direccion": "Calle 4",
+        "telefono": "123456789",
+        "email": "Amartinez@gmail.com",
+        "empresa": "Amazon"
+    },
+    {
+        "id":"5",
+        "img": "",
+        "nombre": "Franco",
+        "apellidos": "Martinez",
+        "direccion": "Calle 4",
+        "telefono": "123456789",
+        "email": "Fmartinez@gmail.com",
+        "empresa": "Amazon"
+    },
+    {
+        "id":"6",
+        "img": "",
+        "nombre": "Candela",
+        "apellidos": "Vazquez",
+        "direccion": "Calle 10",
+        "telefono": "123456789",
+        "email": "Cvazquez@gmail.com",
+        "empresa": "Globant"
+    }
+]

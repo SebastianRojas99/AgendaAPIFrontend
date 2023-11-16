@@ -1,0 +1,15 @@
+<div class="global">
+    <div class="container">
+        <app-icono-contacto [contacto]="contacto"></app-icono-contacto>
+            <p class="nom">Nombre: {{contacto.name}}</p>
+            <p class="ape">Apellido: {{contacto.lastName}}</p>
+            <p> {{contacto.address}}</p>
+            <p>Telefono: {{contacto.number}}</p>
+            <p> {{contacto.email}}</p>
+            <button class="logbtn" (click)="borrarContacto()">Borrar contacto</button>
+            <button class="logbtn" (click)="modalEditar.showModal()">Editar contacto</button>
+            <dialog method="modal" #modalEditar>
+                <app-nuevo-contacto (cerrar)="modalEditar.close()" [contacto]="contacto"></app-nuevo-contacto>
+            </dialog>
+    </div>
+</div>

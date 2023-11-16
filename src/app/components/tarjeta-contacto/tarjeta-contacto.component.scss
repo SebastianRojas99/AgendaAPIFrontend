@@ -1,0 +1,45 @@
+@use "./../../../assets/variables.scss";
+
+
+
+.tarjeta-contacto{
+    display: grid;
+    grid-template-rows: auto ;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    place-items: center;
+    cursor: pointer;
+    background-image: url("./../../../assets/cont1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 30px;
+    height: 25vh;
+    margin-top: 30px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 10px;
+    transition: background-position 0.2s ease;
+    color: #fff;
+    app-icono-contacto{
+        width: 50%;
+        margin: auto;
+    }
+}
+.tarjeta-contacto:hover{
+    background-position: top;
+}
+.tarjeta-contacto .empresa{
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+}
+.title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    background: none;
+    box-shadow: rg;
+}
+
+

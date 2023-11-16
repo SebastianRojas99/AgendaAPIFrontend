@@ -1,0 +1,32 @@
+
+<div class="global">
+    <div class="container">
+        <div class="design">
+            <div class="fil3"></div>
+            <div class="fil4"></div>
+        </div>
+        <div class="login">
+            <div class="fil1 rotate"></div>
+            <div class="fil2 rotate"></div>
+            <form>
+                <h3 class="title">Registrate en A<span class="point">.</span></h3>
+                <div class="textinput">
+                    <input required type="mail" placeholder="Ingresa un mail" >
+                </div>
+                <div class="textinput">
+                    <input type="nombreDeUsuario" placeholder="Ingresa un usuario" >
+                </div>
+                <div class="textinput">
+                    <input type="contrasenia" placeholder="Ingresa una Contraseña">
+                </div>
+                <div class="textinput">
+                    <input type="contrasenia" placeholder="Reingresa tu contraseña">
+                </div>
+                <button class="logbtn" (click)="register()">Comienza</button>
+            </form>
+                <div class="forgot">
+                    <a [routerLink]="['/login']" routerLinkActive="router-link-active">Posees cuenta? Ingresa ahora</a>
+                </div>
+</div>
+
+
