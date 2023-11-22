@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { Contacto } from 'src/app/interfaces/contacto';
 import { FormsModule } from '@angular/forms';
 import { ContactsService } from 'src/app/services/contacts.service';
-import Swal from 'sweetalert2';
 import { generarMensajeError, generarMensajeExito } from 'src/app/helpers/mensajes';
 
 @Component({
@@ -30,7 +29,7 @@ export class NuevoContactoComponent {
 
   
   async onSubmit(){
-    this.contacto.id?this.editarContacto():this.agregarContacto()
+    this.contacto.id?this.editarContacto():this.agregarContacto();
   }
 
   async editarContacto() {

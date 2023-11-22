@@ -1,14 +1,14 @@
 export interface registerData extends User {
-    contrasenia: string,
+    Password: string,
 }
 
 export interface User{
-    nombreDeUsuario: string,
-    nombre: string,
-    apellido: string,
+    UserName: string,
+    FirstName: string,
+    LastName: string,
 }
 
 export interface LoginData {
-    nombreDeUsuario: string,
-    contrasenia: string
+    UserName: string,
+    Password: string
 }

@@ -3,7 +3,7 @@
     <span class="title">A-NotebookUI</span>
     <nav class="navigationbar">
         <a [routerLink]="['/login']" class="abar" >Ingreso<span class="point">.</span></a>
-        <a class="abar" [routerLink]="['/register']">Logout<span class="point">.</span></a>
+        <a class="abar" [routerLink]="['/register']" (click)="logout()">Logout<span class="point">.</span></a>
         <a class="abar" href="">Acerca<span class="point">.</span></a>
     </nav>
 </header>

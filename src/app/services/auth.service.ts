@@ -1,4 +1,4 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable, Signal, WritableSignal, inject, signal } from '@angular/core';
 import { API } from '../constants/api';
 import { LoginData, registerData } from '../interfaces/user';
 import { Router } from '@angular/router';
@@ -8,37 +8,47 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   constructor(){
-    this.token = localStorage.getItem('token');
+    this.token.set(localStorage.getItem('token'));
   }
   router = inject(Router);
-  token:string | null;
+  token:WritableSignal<string | null> = signal(null);
 
   async login(loginData:LoginData){
-    const res = await fetch(API+"authentication/authenticate", {
-      method: "POST",
-      headers: {
-        "Content-Type":"application/json"
-      },
-      body: JSON.stringify(loginData)
-    })
-    if(!res.ok) return false;
-    const tokenRecibido = await res.text()
-    console.log("LOGUEANDO",tokenRecibido)
-    localStorage.setItem("token",tokenRecibido);
-    this.token = tokenRecibido;
-    return true;
+    try{
+      const res = await fetch(API+"authentication/authenticate", {
+        method: "POST",
+        headers: {
+          "Content-Type":"application/json"
+        },
+        body: JSON.stringify(loginData)
+      })
+      if(!res.ok) return false;
+      const tokenRecibido = await res.text()
+      console.log("LOGUEANDO",tokenRecibido)
+      localStorage.setItem("token",tokenRecibido);
+      this.token.set(tokenRecibido);
+      return true;
+    }
+    catch{
+      return false
+    }
   }
 
   async register(registerData: registerData){
     const res = await fetch(API+"User", {
       method: "POST",
+      headers: {
+        "Content-Type":"application/json"
+      },
       body: JSON.stringify(registerData)
     });
     console.log("REGISTRANDO",res)
+    return res
   }
 
   logout(){
+    this.token.set(null);
     localStorage.removeItem("token");
-    this.router.navigate(["/"]);
+    this.router.navigate(["/login"]);
   }
 }

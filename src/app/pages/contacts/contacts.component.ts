@@ -13,7 +13,7 @@ export class ContactsComponent implements OnInit {
   contactos:Contacto[] = []
 
   ngOnInit(): void {
-    this.contactsService.getall().then(res => {
+    this.contactsService.getAll().then(res => {
       this.contactos = res;
     })
   }
