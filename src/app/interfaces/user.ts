@@ -1,4 +1,4 @@
-export interface registerData extends User {
+export interface RegisterData extends User {
     Password: string,
 }
 

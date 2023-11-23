@@ -1,6 +1,6 @@
 import { Component, Signal, WritableSignal, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
-import { registerData } from 'src/app/interfaces/user';
+import { RegisterData } from 'src/app/interfaces/user';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class RegisterComponent {
   errorRegister: WritableSignal<boolean> = signal(false)
   cargando = signal(false);
 
-  registerData: registerData = {
+  registerData: RegisterData = {
     UserName: "",
     FirstName: "",
     LastName: "",

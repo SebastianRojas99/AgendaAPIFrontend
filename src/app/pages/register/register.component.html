@@ -8,25 +8,26 @@
         <div class="login">
             <div class="fil1 rotate"></div>
             <div class="fil2 rotate"></div>
-            <form>
-                <h3 class="title">Registrate en A<span class="point">.</span></h3>
-                <div class="textinput">
-                    <input required type="mail" placeholder="Ingresa un mail" >
-                </div>
-                <div class="textinput">
-                    <input type="nombreDeUsuario" placeholder="Ingresa un usuario" >
-                </div>
-                <div class="textinput">
-                    <input type="contrasenia" placeholder="Ingresa una Contraseña">
-                </div>
-                <div class="textinput">
-                    <input type="contrasenia" placeholder="Reingresa tu contraseña">
-                </div>
-                <button class="logbtn" (click)="register()">Comienza</button>
+            <form #registerForm="ngForm" (ngSubmit)="register()">
+                <form #registerForm="ngForm" (ngSubmit)="register()">
+                    <label for="user" class="sr-only">firstName de usuario</label>
+                    <input type="text" class="textinput" name="user" id="user" placeholder="Usuario" autocomplete="username" minlength="4" required="true" [(ngModel)]="registerData.UserName" #user="ngModel">
+                    <p class="error" *ngIf="user.invalid && (user.touched || user.dirty)">Ingrese un firstName de usuario válido</p>
+                    <label for="firstName" class="sr-only">firstName</label>
+                    <input type="text"class="textinput" name="firstName" id="firstName" placeholder="firstName" autocomplete="firstName" minlength="3" [(ngModel)]="registerData.FirstName" #firstName="ngModel">
+                    <p class="error" *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)">Ingrese un firstName válido</p>
+                    <label for="lastName" class="sr-only">lastName</label>
+                    <input type="text" class="textinput"name="lastName" id="lastName" placeholder="lastName" autocomplete="lastName" minlength="3" [(ngModel)]="registerData.LastName" #lastName="ngModel">
+                    <p class="error" *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)">Ingrese un lastName válido</p>
+                    <label for="password" class="sr-only">Contraseña</label>
+                    <input type="password"class="textinput" name="password" id="password" placeholder="Contraseña" autocomplete="current-password" minlength="8" [(ngModel)]="registerData.Password" #password="ngModel">
+                    <p class="error" *ngIf="password.invalid && (password.touched || password.dirty)">Ingrese una contraseña válida</p>
+                <button class="logbtn" type="submit" [disabled]="registerForm.invalid">Comienza</button>
+                <img class="spinner" src="./../../../assets/img/icons/spinner.svg" alt="cargando" *ngIf="cargando()">
+                <p *ngIf="errorRegister()" class="error">Error en el inicio de sesión</p>
             </form>
                 <div class="forgot">
                     <a [routerLink]="['/login']" routerLinkActive="router-link-active">Posees cuenta? Ingresa ahora</a>
                 </div>
-</div>
 
 
