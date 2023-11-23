@@ -1,8 +1,8 @@
 <header>
     <img src="./assets/newlogo.png" alt="imagen empresa" class="logo">
-    <span class="title">A-NotebookUI</span>
+    <span class="title"><a [routerLink]="['/login']">A-NotebookUI</a></span>
     <nav class="navigationbar">
-        <a [routerLink]="['/login']" class="abar" >Ingreso<span class="point">.</span></a>
+        <a [routerLink]="['/login']" class="abar" >Contactos<span class="point">.</span></a>
         <a class="abar" [routerLink]="['/register']" (click)="logout()">Logout<span class="point">.</span></a>
         <a class="abar" href="">Acerca<span class="point">.</span></a>
     </nav>

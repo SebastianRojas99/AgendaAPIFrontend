@@ -2,11 +2,9 @@
 .global{
     display: grid;
     place-items: center;
-    //margin-top: 30px;
-    //margin-bottom: 30px;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    
 }
+
 
 .container{
     width: 55vw !important;
@@ -21,12 +19,19 @@
     color: #FFf;
     box-shadow: 0 0 17px 10px rgb(0,0,0,30%);
     border-radius: 20px;
+    
 }
 app-icono-contacto{
     display: grid;
     place-items: center;
     margin: auto;
-    width: 50%;
+    width: 30%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+    &:hover{
+        filter: brightness(0.8);
+      }
 }
 
 .cont{
@@ -47,9 +52,18 @@ app-icono-contacto{
     font-size: 1rem;
     color: #fff;
 }
-
+.cont-btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    margin: auto;
+    margin-bottom: 10px;
+    width: 50%;
+    height: 80%;
+    padding: auto;
+}
 .logbtn{
-    width: 40%;
+    width: 80%;
     height: 100%;
     color: white;
     //element
@@ -63,6 +77,12 @@ app-icono-contacto{
 
 @media (max-width < 768px) {
     .container{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .logbtn{
         width: 100%;
         height: 100%;
         margin: 0;
